@@ -1,4 +1,4 @@
-cd "C:\Users\Abdul Rehaman\Desktop\Model Refresh Feb 2023"
+##cd "C:\Users\Abdul Rehaman\Desktop\Model Refresh Feb 2023"
 
 
 import pandas as pd
@@ -8,60 +8,63 @@ import io
 import psycopg2
 import marshal
 
-from config.config import config
+#from config.config import config
 
 
-s = open('C:/Users/INTEL/Downloads/Handover/Dataset_masked_functions.pyc', 'rb')
+s = open('Dataset_masked_functions.pyc', 'rb')
 s.seek(16)  # go past first eight bytes
 code_obj = marshal.load(s)
 exec(code_obj)
 
 
-price_data = pd.read_excel(r"data files\Price_Data_TillDec2022.xlsx")
-price_data
+print("Loading Price_Data_TillDec2022 file")
+price_data = pd.read_excel(r"data files/Price_Data_TillDec2022.xlsx")
+#price_data
 
 
-vol_data = pd.read_excel(r"data files\Top_SKUs_Volume_till_Dec2022.xlsx")
-vol_data
+print("Loading Top_SKUs_Volume_till_Dec2022 file")
+vol_data = pd.read_excel(r"data files/Top_SKUs_Volume_till_Dec2022.xlsx")
+#vol_data
 
 
-jbp_amz_data = pd.read_excel(r"data files\Amazon_JBP_2020_to_2023Jan.xlsx", sheet_name = "Amazon JBP 20to22")
-jbp_amz_data
+print("Loading Amazon_JBP_2020_to_2023Jan file")
+jbp_amz_data = pd.read_excel(r"data files/Amazon_JBP_2020_to_2023Jan.xlsx", sheet_name = "Amazon JBP 20to22")
+#jbp_amz_data
 
 
-
-jbp_oth_data = pd.read_excel(r"data files\JBP_Others_2020_to_2022.xlsx", sheet_name = "Sheet1")
-jbp_oth_data
-
-
-
-pla_data = pd.read_excel(r"data files\PLA_till_Dec22.xlsx", sheet_name = 'PLA_till_Dec22')
-pla_data
+print("Loading JBP_Others_2020_to_2022 file")
+jbp_oth_data = pd.read_excel(r"data files/JBP_Others_2020_to_2022.xlsx", sheet_name = "Sheet1")
+#jbp_oth_data
 
 
+print("Loading PLA_tillJan23 file")
+pla_data = pd.read_excel(r"data files/PLA_till_Dec22.xlsx", sheet_name = 'PLA_till_Dec22')
+#pla_data
 
-pca_data = pd.read_excel(r"data files\PCA_tillJan23.xlsx", sheet_name = 'Sheet1')
-pca_data
+
+print("Loading PCA_tillJan23 file")
+pca_data = pd.read_excel(r"data files/PCA_tillJan23.xlsx", sheet_name = 'Sheet1')
+#pca_data
 
 
-
-tv_data = pd.read_excel(r"data files\TV_Spends_Final_till_Dec22.xlsx")
+print("Loading TV_Spends_Final_till_Dec22 file")
+tv_data = pd.read_excel(r"data files/TV_Spends_Final_till_Dec22.xlsx")
 tv_data['Brand'].unique()
 
 
-
-events_data = pd.read_excel(r"data files\Events_data_till_Dec2022.xlsx") 
-events_data
-
-
-
-comp_skus = pd.read_excel(r"data files\Competition_skus_for_MCA_Brands.xlsx")
-comp_skus
+print("Loading Events_data_till_Dec2022 file")
+events_data = pd.read_excel(r"data files/Events_data_till_Dec2022.xlsx") 
+#events_data
 
 
+print("Loading Competition_skus_for_MCA_Brands file")
+comp_skus = pd.read_excel(r"data files/Competition_skus_for_MCA_Brands.xlsx")
+#comp_skus
 
-tot_vol_data = pd.read_excel(r"data files\All_SKUs_Volume_till_Dec2022.xlsx", sheet_name='Sheet1')
-tot_vol_data
+
+print("Loading All_SKUs_Volume_till_Dec2022 file")
+tot_vol_data = pd.read_excel(r"data files/All_SKUs_Volume_till_Dec2022.xlsx", sheet_name='Sheet1')
+#tot_vol_data
  
 
 
